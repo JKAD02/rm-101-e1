@@ -15,14 +15,18 @@ const AddTask = () => {
   };
 
   const handleSubmit = () => {
-    const newTask = {
-      id: data.length + 1,
-      text: task,
-      done: false,
-      count: 1
-    };
+    const check = data.find((item) => item.text === task);
 
-    addTask(newTask);
+    if (check === undefined && task !== "") {
+      const newTask = {
+        id: data.length + 1,
+        text: task,
+        done: false,
+        count: 1
+      };
+
+      addTask(newTask);
+    }
 
     setTask("");
   };

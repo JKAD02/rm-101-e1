@@ -10,7 +10,7 @@ const Counter = ({ countT, id }) => {
   const { updateTask } = useContext(DataContext)
 
   const handleCounter = (value) => {
-    if (value == -1 && countT <= 1) {
+    if (value === -1 && countT <= 1) {
       updateTask(id, countT);
     } else {
       count = countT + value;
